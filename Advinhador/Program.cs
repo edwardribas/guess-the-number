@@ -7,27 +7,27 @@ namespace Adivinhador
         public static void Main()
         {
             // Exercício com o C#
-            // Gerar um número de 1 a 100 e pedir para o usuário adivinhar
+            // Gerar um número de 1 a 50 e pedir para o usuário adivinhar
 
             bool finishGame = false;
             while (finishGame == false)
             {
                 Console.WriteLine("Olá! Vamos fazer uma partida de adivinhação.");
-                Console.WriteLine("Diga um número entre 1 e 100:");
+                Console.WriteLine("Diga um número entre 1 e 50:");
                 Console.WriteLine("");
 
-                int randomNumber = new Random().Next(0, 101);
+                int randomNumber = new Random().Next(1, 51);
 
                 try
                 {
                     int userNumber = Convert.ToInt32(Console.ReadLine());
-                    bool isGuessInRange = userNumber <= 100 && userNumber > 0;
+                    bool isGuessInRange = userNumber <= 50&& userNumber > 0;
                     Console.WriteLine("");
 
                     if (!isGuessInRange)
                     {
                         Console.WriteLine("Epa, calma lá!");
-                        Console.WriteLine("O número precisa estar entre 1 e 100!");
+                        Console.WriteLine("O número precisa estar entre 1 e 50!");
                     } else
                     {
                         if (userNumber != randomNumber)
@@ -52,7 +52,7 @@ namespace Adivinhador
                 {
                     Console.WriteLine("");
                     Console.WriteLine("Número muito alto ou pequeno demais!");
-                    Console.WriteLine("O valor precisa estar entre 1 e 100.");
+                    Console.WriteLine("O valor precisa estar entre 1 e 50.");
                 }
 
                 string result = "";
